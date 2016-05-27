@@ -1,0 +1,10 @@
+PODS:
+  - JGActionSheet (1.0.5)
+
+DEPENDENCIES:
+  - JGActionSheet
+
+SPEC CHECKSUMS:
+  JGActionSheet: 2cfca820b57a11ec4b4a5655d45ee599fbeddc05
+
+COCOAPODS: 0.39.0

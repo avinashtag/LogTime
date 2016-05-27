@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "Models.h"
 
 @interface ModelContext : NSObject
 
@@ -27,6 +26,7 @@
 - (NSManagedObject *) insertEntity:(Class)classs;
 - (NSArray <NSManagedObject *>*) fetchEntities:(Class)classs;
 - (NSArray <NSManagedObject *>*) fetchEntities:(Class)classs perdicate:(NSPredicate *)predicate;
+- (NSArray <NSManagedObject *>*) fetchEntities:(Class)classs perdicate:(NSPredicate *)predicate sortKey:(NSString *)sortKey ascending:(BOOL)ascending;
 - (NSManagedObject *) fetchEntity:(Class)classs;
 - (NSManagedObject *) fetchEntity:(Class)classs perdicate:(NSPredicate *)predicate;
 @end

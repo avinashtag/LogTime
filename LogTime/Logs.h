@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Logs : NSManagedObject
 
 // Insert code here to declare functionality of your managed object subclass
-
++ (NSArray *)logsOfDate:(NSDate *)date;
 @end
 
 NS_ASSUME_NONNULL_END

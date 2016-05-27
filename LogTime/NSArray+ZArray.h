@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface NSArray (ZArray)
-
+- (void)splitArray:(void(^)(NSArray *odds, NSArray* evens))completion;
 @end

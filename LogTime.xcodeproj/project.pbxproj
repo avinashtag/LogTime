@@ -14,6 +14,17 @@
 		6A1A2CA21CF834FB00327963 /* LogTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CA01CF834FB00327963 /* LogTime.xcdatamodeld */; };
 		6A1A2CA41CF834FB00327963 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A1A2CA31CF834FB00327963 /* Assets.xcassets */; };
 		6A1A2CA71CF834FB00327963 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1A2CA51CF834FB00327963 /* LaunchScreen.storyboard */; };
+		6A1A2CB01CF8359F00327963 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CAF1CF8359F00327963 /* HomeViewController.m */; };
+		6A1A2CB51CF8365700327963 /* Logs+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CB21CF8365700327963 /* Logs+CoreDataProperties.m */; };
+		6A1A2CB61CF8365700327963 /* Logs.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CB41CF8365700327963 /* Logs.m */; };
+		6A1A2CB91CF8387500327963 /* ModelContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CB81CF8387500327963 /* ModelContext.m */; };
+		6A1A2CBC1CF839BB00327963 /* ShowDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CBB1CF839BB00327963 /* ShowDataViewController.m */; };
+		6A1A2CBF1CF83ABE00327963 /* LogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CBE1CF83ABE00327963 /* LogCell.m */; };
+		6A1A2CC21CF83BB100327963 /* NSDate+ZDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CC11CF83BB100327963 /* NSDate+ZDate.m */; };
+		6A1A2CC51CF8622600327963 /* NSString+TString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CC41CF8622600327963 /* NSString+TString.m */; };
+		6A1A2CC81CF86A9F00327963 /* NSArray+ZArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CC71CF86A9F00327963 /* NSArray+ZArray.m */; };
+		6A1A2CCB1CF8729000327963 /* NSObject+ATObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CCA1CF8729000327963 /* NSObject+ATObject.m */; };
+		F4CF07CC3131087AF1E93CE2 /* libPods-LogTime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0ED4EDA40A60A5A49F0DC6 /* libPods-LogTime.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +39,29 @@
 		6A1A2CA31CF834FB00327963 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A1A2CA61CF834FB00327963 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A1A2CA81CF834FB00327963 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A1A2CAE1CF8359F00327963 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		6A1A2CAF1CF8359F00327963 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		6A1A2CB11CF8365700327963 /* Logs+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Logs+CoreDataProperties.h"; path = "LogTime/Logs+CoreDataProperties.h"; sourceTree = "<group>"; };
+		6A1A2CB21CF8365700327963 /* Logs+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Logs+CoreDataProperties.m"; path = "LogTime/Logs+CoreDataProperties.m"; sourceTree = "<group>"; };
+		6A1A2CB31CF8365700327963 /* Logs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Logs.h; path = LogTime/Logs.h; sourceTree = "<group>"; };
+		6A1A2CB41CF8365700327963 /* Logs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Logs.m; path = LogTime/Logs.m; sourceTree = "<group>"; };
+		6A1A2CB71CF8387500327963 /* ModelContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelContext.h; sourceTree = "<group>"; };
+		6A1A2CB81CF8387500327963 /* ModelContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelContext.m; sourceTree = "<group>"; };
+		6A1A2CBA1CF839BB00327963 /* ShowDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowDataViewController.h; sourceTree = "<group>"; };
+		6A1A2CBB1CF839BB00327963 /* ShowDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowDataViewController.m; sourceTree = "<group>"; };
+		6A1A2CBD1CF83ABE00327963 /* LogCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogCell.h; sourceTree = "<group>"; };
+		6A1A2CBE1CF83ABE00327963 /* LogCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogCell.m; sourceTree = "<group>"; };
+		6A1A2CC01CF83BB100327963 /* NSDate+ZDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZDate.h"; sourceTree = "<group>"; };
+		6A1A2CC11CF83BB100327963 /* NSDate+ZDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ZDate.m"; sourceTree = "<group>"; };
+		6A1A2CC31CF8622600327963 /* NSString+TString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TString.h"; sourceTree = "<group>"; };
+		6A1A2CC41CF8622600327963 /* NSString+TString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TString.m"; sourceTree = "<group>"; };
+		6A1A2CC61CF86A9F00327963 /* NSArray+ZArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ZArray.h"; sourceTree = "<group>"; };
+		6A1A2CC71CF86A9F00327963 /* NSArray+ZArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ZArray.m"; sourceTree = "<group>"; };
+		6A1A2CC91CF8729000327963 /* NSObject+ATObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ATObject.h"; sourceTree = "<group>"; };
+		6A1A2CCA1CF8729000327963 /* NSObject+ATObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ATObject.m"; sourceTree = "<group>"; };
+		9A0ED4EDA40A60A5A49F0DC6 /* libPods-LogTime.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LogTime.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDA48CB1BAE473081EDEE1AC /* Pods-LogTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LogTime/Pods-LogTime.debug.xcconfig"; sourceTree = "<group>"; };
+		F6461853B6C5BF9C5269BFAE /* Pods-LogTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-LogTime/Pods-LogTime.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4CF07CC3131087AF1E93CE2 /* libPods-LogTime.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,8 +79,14 @@
 		6A1A2C881CF834FB00327963 = {
 			isa = PBXGroup;
 			children = (
+				6A1A2CB11CF8365700327963 /* Logs+CoreDataProperties.h */,
+				6A1A2CB21CF8365700327963 /* Logs+CoreDataProperties.m */,
+				6A1A2CB31CF8365700327963 /* Logs.h */,
+				6A1A2CB41CF8365700327963 /* Logs.m */,
 				6A1A2C931CF834FB00327963 /* LogTime */,
 				6A1A2C921CF834FB00327963 /* Products */,
+				DB19A00353D3D1DBB08F55DB /* Pods */,
+				95F039510A97C4F82F08EF5F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,8 +103,24 @@
 			children = (
 				6A1A2C971CF834FB00327963 /* AppDelegate.h */,
 				6A1A2C981CF834FB00327963 /* AppDelegate.m */,
+				6A1A2CB71CF8387500327963 /* ModelContext.h */,
+				6A1A2CB81CF8387500327963 /* ModelContext.m */,
 				6A1A2C9A1CF834FB00327963 /* ViewController.h */,
 				6A1A2C9B1CF834FB00327963 /* ViewController.m */,
+				6A1A2CAE1CF8359F00327963 /* HomeViewController.h */,
+				6A1A2CAF1CF8359F00327963 /* HomeViewController.m */,
+				6A1A2CBA1CF839BB00327963 /* ShowDataViewController.h */,
+				6A1A2CBB1CF839BB00327963 /* ShowDataViewController.m */,
+				6A1A2CBD1CF83ABE00327963 /* LogCell.h */,
+				6A1A2CBE1CF83ABE00327963 /* LogCell.m */,
+				6A1A2CC01CF83BB100327963 /* NSDate+ZDate.h */,
+				6A1A2CC11CF83BB100327963 /* NSDate+ZDate.m */,
+				6A1A2CC31CF8622600327963 /* NSString+TString.h */,
+				6A1A2CC41CF8622600327963 /* NSString+TString.m */,
+				6A1A2CC61CF86A9F00327963 /* NSArray+ZArray.h */,
+				6A1A2CC71CF86A9F00327963 /* NSArray+ZArray.m */,
+				6A1A2CC91CF8729000327963 /* NSObject+ATObject.h */,
+				6A1A2CCA1CF8729000327963 /* NSObject+ATObject.m */,
 				6A1A2C9D1CF834FB00327963 /* Main.storyboard */,
 				6A1A2CA31CF834FB00327963 /* Assets.xcassets */,
 				6A1A2CA51CF834FB00327963 /* LaunchScreen.storyboard */,
@@ -82,6 +139,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		95F039510A97C4F82F08EF5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A0ED4EDA40A60A5A49F0DC6 /* libPods-LogTime.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB19A00353D3D1DBB08F55DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CDA48CB1BAE473081EDEE1AC /* Pods-LogTime.debug.xcconfig */,
+				F6461853B6C5BF9C5269BFAE /* Pods-LogTime.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,9 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6A1A2CAB1CF834FB00327963 /* Build configuration list for PBXNativeTarget "LogTime" */;
 			buildPhases = (
+				C3F500079D74846149846E4F /* Check Pods Manifest.lock */,
 				6A1A2C8D1CF834FB00327963 /* Sources */,
 				6A1A2C8E1CF834FB00327963 /* Frameworks */,
 				6A1A2C8F1CF834FB00327963 /* Resources */,
+				A2B930AC2529555917CAF615 /* Embed Pods Frameworks */,
+				82CEA135CCF12D880A908CB2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -113,6 +190,7 @@
 				TargetAttributes = {
 					6A1A2C901CF834FB00327963 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = LZTXQ98G2N;
 					};
 				};
 			};
@@ -147,15 +225,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		82CEA135CCF12D880A908CB2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LogTime/Pods-LogTime-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A2B930AC2529555917CAF615 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LogTime/Pods-LogTime-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3F500079D74846149846E4F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6A1A2C8D1CF834FB00327963 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A1A2CBF1CF83ABE00327963 /* LogCell.m in Sources */,
+				6A1A2CB51CF8365700327963 /* Logs+CoreDataProperties.m in Sources */,
 				6A1A2C9C1CF834FB00327963 /* ViewController.m in Sources */,
+				6A1A2CC51CF8622600327963 /* NSString+TString.m in Sources */,
 				6A1A2CA21CF834FB00327963 /* LogTime.xcdatamodeld in Sources */,
+				6A1A2CC81CF86A9F00327963 /* NSArray+ZArray.m in Sources */,
 				6A1A2C991CF834FB00327963 /* AppDelegate.m in Sources */,
+				6A1A2CCB1CF8729000327963 /* NSObject+ATObject.m in Sources */,
+				6A1A2CB01CF8359F00327963 /* HomeViewController.m in Sources */,
+				6A1A2CB61CF8365700327963 /* Logs.m in Sources */,
 				6A1A2C961CF834FB00327963 /* main.m in Sources */,
+				6A1A2CBC1CF839BB00327963 /* ShowDataViewController.m in Sources */,
+				6A1A2CB91CF8387500327963 /* ModelContext.m in Sources */,
+				6A1A2CC21CF83BB100327963 /* NSDate+ZDate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,22 +401,26 @@
 		};
 		6A1A2CAC1CF834FB00327963 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDA48CB1BAE473081EDEE1AC /* Pods-LogTime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = LogTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zoozoo.LogTime;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rohde-schwarz.LogTime";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
 		6A1A2CAD1CF834FB00327963 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6461853B6C5BF9C5269BFAE /* Pods-LogTime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = LogTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zoozoo.LogTime;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rohde-schwarz.LogTime";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -304,6 +444,7 @@
 				6A1A2CAD1CF834FB00327963 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

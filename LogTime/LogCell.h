@@ -10,4 +10,5 @@
 
 @interface LogCell : UITableViewCell
 
+@property (nonatomic, weak) IBOutlet UILabel *time;
 @end

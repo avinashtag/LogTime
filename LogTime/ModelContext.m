@@ -34,7 +34,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"CarePlus" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"LogTime" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -132,6 +132,24 @@
     NSError * error = nil;
     return [context executeFetchRequest:fetch error:&error];
 }
+
+- (NSArray <NSManagedObject *>*) fetchEntities:(Class)classs perdicate:(NSPredicate *)predicate sortKey:(NSString *)sortKey ascending:(BOOL)ascending{
+    
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:NSStringFromClass(classs)  inManagedObjectContext: context];
+    [fetch setEntity:entityDescription];
+    if (predicate) {
+        [fetch setPredicate:predicate];
+    }
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:sortKey
+                                                                   ascending:ascending];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetch setSortDescriptors:sortDescriptors];
+    NSError * error = nil;
+    return [context executeFetchRequest:fetch error:&error];
+}
+
 
 - (NSManagedObject *) fetchEntity:(Class)classs{
     return [self fetchEntity:classs perdicate:nil];

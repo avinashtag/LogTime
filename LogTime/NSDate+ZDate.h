@@ -11,4 +11,6 @@
 @interface NSDate (ZDate)
 
 - (NSString *) dateStringInFormat:(NSString*)format;
+- (NSDate *) nextDate;
+- (NSDate *) eliminateTime;
 @end
