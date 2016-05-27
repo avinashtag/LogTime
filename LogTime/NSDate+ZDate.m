@@ -19,12 +19,30 @@
     return [formator stringFromDate:self];
 }
 
+- (NSInteger) dateMonth{
+    
+    unsigned int flags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
+    NSCalendar* calendar = [[NSLocale currentLocale] objectForKey:NSLocaleCalendar];
+    NSDateComponents* components = [calendar components:flags fromDate:self];
+    return components.month ;
+}
+
 - (NSDate *) nextDate{
     
     unsigned int flags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
     NSCalendar* calendar = [[NSLocale currentLocale] objectForKey:NSLocaleCalendar];
     NSDateComponents* components = [calendar components:flags fromDate:self];
     components.day = components.day+1;
+    NSDate* tomorrow = [calendar dateFromComponents:components];
+    return tomorrow;
+}
+
+- (NSDate *) nextMonthDate{
+    
+    unsigned int flags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
+    NSCalendar* calendar = [[NSLocale currentLocale] objectForKey:NSLocaleCalendar];
+    NSDateComponents* components = [calendar components:flags fromDate:self];
+    components.month = components.month+1;
     NSDate* tomorrow = [calendar dateFromComponents:components];
     return tomorrow;
 }

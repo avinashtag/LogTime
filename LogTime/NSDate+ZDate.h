@@ -12,5 +12,7 @@
 
 - (NSString *) dateStringInFormat:(NSString*)format;
 - (NSDate *) nextDate;
+- (NSDate *) nextMonthDate;
 - (NSDate *) eliminateTime;
+- (NSInteger) dateMonth;
 @end
