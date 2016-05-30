@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SheetViewController : UITableViewController
+@interface SheetViewController : UIViewController
 
 @end

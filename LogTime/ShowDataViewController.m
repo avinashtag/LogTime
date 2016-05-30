@@ -13,10 +13,12 @@
 #import "NSString+TString.h"
 #import "ModelContext.h"
 #import <JGActionSheet.h>
+#import "SheetViewController.h"
 
 
 @interface ShowDataViewController (){
     JGActionSheet *sheet;
+    SheetViewController *sheetController;
 }
 
 @property (nonatomic, strong) NSMutableArray *dataSource;
@@ -109,5 +111,10 @@
     [_dateLabel setText:[_selectedDate dateStringInFormat:@"dd-MMM"]];
 }
 
+- (IBAction)showAll:(id)sender {
+    
+    sheetController = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([SheetViewController class])];
+    [self.navigationController pushViewController:sheetController animated:YES];
+}
 
 @end

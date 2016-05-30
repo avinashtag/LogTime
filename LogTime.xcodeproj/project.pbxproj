@@ -15,7 +15,6 @@
 		6A1A2CA41CF834FB00327963 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A1A2CA31CF834FB00327963 /* Assets.xcassets */; };
 		6A1A2CA71CF834FB00327963 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1A2CA51CF834FB00327963 /* LaunchScreen.storyboard */; };
 		6A1A2CB01CF8359F00327963 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CAF1CF8359F00327963 /* HomeViewController.m */; };
-		6A1A2CB51CF8365700327963 /* Logs+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CB21CF8365700327963 /* Logs+CoreDataProperties.m */; };
 		6A1A2CB61CF8365700327963 /* Logs.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CB41CF8365700327963 /* Logs.m */; };
 		6A1A2CB91CF8387500327963 /* ModelContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CB81CF8387500327963 /* ModelContext.m */; };
 		6A1A2CBC1CF839BB00327963 /* ShowDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CBB1CF839BB00327963 /* ShowDataViewController.m */; };
@@ -25,8 +24,37 @@
 		6A1A2CC81CF86A9F00327963 /* NSArray+ZArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CC71CF86A9F00327963 /* NSArray+ZArray.m */; };
 		6A1A2CCB1CF8729000327963 /* NSObject+ATObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CCA1CF8729000327963 /* NSObject+ATObject.m */; };
 		6A1A2CCE1CF87D4A00327963 /* SheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CCD1CF87D4A00327963 /* SheetViewController.m */; };
+		6A1A2CD51CFC464700327963 /* Logs+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CD41CFC464700327963 /* Logs+CoreDataProperties.m */; };
+		6A1A2CDC1CFC535B00327963 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A1A2CDB1CFC535B00327963 /* NotificationCenter.framework */; };
+		6A1A2CE01CFC535B00327963 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CDF1CFC535B00327963 /* TodayViewController.m */; };
+		6A1A2CE31CFC535B00327963 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1A2CE11CFC535B00327963 /* MainInterface.storyboard */; };
+		6A1A2CE71CFC535B00327963 /* LogTimeExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6A1A2CDA1CFC535B00327963 /* LogTimeExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F4CF07CC3131087AF1E93CE2 /* libPods-LogTime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0ED4EDA40A60A5A49F0DC6 /* libPods-LogTime.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6A1A2CE51CFC535B00327963 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A1A2C891CF834FB00327963 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A1A2CD91CFC535B00327963;
+			remoteInfo = LogTimeExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6A1A2CEB1CFC535B00327963 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6A1A2CE71CFC535B00327963 /* LogTimeExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6A1A2C911CF834FB00327963 /* LogTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,8 +70,6 @@
 		6A1A2CA81CF834FB00327963 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A1A2CAE1CF8359F00327963 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		6A1A2CAF1CF8359F00327963 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		6A1A2CB11CF8365700327963 /* Logs+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Logs+CoreDataProperties.h"; path = "LogTime/Logs+CoreDataProperties.h"; sourceTree = "<group>"; };
-		6A1A2CB21CF8365700327963 /* Logs+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Logs+CoreDataProperties.m"; path = "LogTime/Logs+CoreDataProperties.m"; sourceTree = "<group>"; };
 		6A1A2CB31CF8365700327963 /* Logs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Logs.h; path = LogTime/Logs.h; sourceTree = "<group>"; };
 		6A1A2CB41CF8365700327963 /* Logs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Logs.m; path = LogTime/Logs.m; sourceTree = "<group>"; };
 		6A1A2CB71CF8387500327963 /* ModelContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelContext.h; sourceTree = "<group>"; };
@@ -62,6 +88,15 @@
 		6A1A2CCA1CF8729000327963 /* NSObject+ATObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ATObject.m"; sourceTree = "<group>"; };
 		6A1A2CCC1CF87D4A00327963 /* SheetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SheetViewController.h; sourceTree = "<group>"; };
 		6A1A2CCD1CF87D4A00327963 /* SheetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SheetViewController.m; sourceTree = "<group>"; };
+		6A1A2CD21CFC45C700327963 /* LogTime 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "LogTime 2.xcdatamodel"; sourceTree = "<group>"; };
+		6A1A2CD31CFC464700327963 /* Logs+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Logs+CoreDataProperties.h"; path = "LogTime/Logs+CoreDataProperties.h"; sourceTree = "<group>"; };
+		6A1A2CD41CFC464700327963 /* Logs+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Logs+CoreDataProperties.m"; path = "LogTime/Logs+CoreDataProperties.m"; sourceTree = "<group>"; };
+		6A1A2CDA1CFC535B00327963 /* LogTimeExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LogTimeExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A1A2CDB1CFC535B00327963 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		6A1A2CDE1CFC535B00327963 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		6A1A2CDF1CFC535B00327963 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		6A1A2CE21CFC535B00327963 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		6A1A2CE41CFC535B00327963 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A0ED4EDA40A60A5A49F0DC6 /* libPods-LogTime.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LogTime.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA48CB1BAE473081EDEE1AC /* Pods-LogTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LogTime/Pods-LogTime.debug.xcconfig"; sourceTree = "<group>"; };
 		F6461853B6C5BF9C5269BFAE /* Pods-LogTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-LogTime/Pods-LogTime.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,17 +111,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6A1A2CD71CFC535B00327963 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A1A2CDC1CFC535B00327963 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		6A1A2C881CF834FB00327963 = {
 			isa = PBXGroup;
 			children = (
-				6A1A2CB11CF8365700327963 /* Logs+CoreDataProperties.h */,
-				6A1A2CB21CF8365700327963 /* Logs+CoreDataProperties.m */,
+				6A1A2CD31CFC464700327963 /* Logs+CoreDataProperties.h */,
+				6A1A2CD41CFC464700327963 /* Logs+CoreDataProperties.m */,
 				6A1A2CB31CF8365700327963 /* Logs.h */,
 				6A1A2CB41CF8365700327963 /* Logs.m */,
 				6A1A2C931CF834FB00327963 /* LogTime */,
+				6A1A2CDD1CFC535B00327963 /* LogTimeExtension */,
 				6A1A2C921CF834FB00327963 /* Products */,
 				DB19A00353D3D1DBB08F55DB /* Pods */,
 				95F039510A97C4F82F08EF5F /* Frameworks */,
@@ -97,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				6A1A2C911CF834FB00327963 /* LogTime.app */,
+				6A1A2CDA1CFC535B00327963 /* LogTimeExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,10 +189,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6A1A2CDD1CFC535B00327963 /* LogTimeExtension */ = {
+			isa = PBXGroup;
+			children = (
+				6A1A2CDE1CFC535B00327963 /* TodayViewController.h */,
+				6A1A2CDF1CFC535B00327963 /* TodayViewController.m */,
+				6A1A2CE11CFC535B00327963 /* MainInterface.storyboard */,
+				6A1A2CE41CFC535B00327963 /* Info.plist */,
+			);
+			path = LogTimeExtension;
+			sourceTree = "<group>";
+		};
 		95F039510A97C4F82F08EF5F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				9A0ED4EDA40A60A5A49F0DC6 /* libPods-LogTime.a */,
+				6A1A2CDB1CFC535B00327963 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -174,15 +231,34 @@
 				6A1A2C8F1CF834FB00327963 /* Resources */,
 				A2B930AC2529555917CAF615 /* Embed Pods Frameworks */,
 				82CEA135CCF12D880A908CB2 /* Copy Pods Resources */,
+				6A1A2CEB1CFC535B00327963 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6A1A2CE61CFC535B00327963 /* PBXTargetDependency */,
 			);
 			name = LogTime;
 			productName = LogTime;
 			productReference = 6A1A2C911CF834FB00327963 /* LogTime.app */;
 			productType = "com.apple.product-type.application";
+		};
+		6A1A2CD91CFC535B00327963 /* LogTimeExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A1A2CE81CFC535B00327963 /* Build configuration list for PBXNativeTarget "LogTimeExtension" */;
+			buildPhases = (
+				6A1A2CD61CFC535B00327963 /* Sources */,
+				6A1A2CD71CFC535B00327963 /* Frameworks */,
+				6A1A2CD81CFC535B00327963 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LogTimeExtension;
+			productName = LogTimeExtension;
+			productReference = 6A1A2CDA1CFC535B00327963 /* LogTimeExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -194,6 +270,10 @@
 				ORGANIZATIONNAME = ZooZoo;
 				TargetAttributes = {
 					6A1A2C901CF834FB00327963 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = LZTXQ98G2N;
+					};
+					6A1A2CD91CFC535B00327963 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = LZTXQ98G2N;
 					};
@@ -213,6 +293,7 @@
 			projectRoot = "";
 			targets = (
 				6A1A2C901CF834FB00327963 /* LogTime */,
+				6A1A2CD91CFC535B00327963 /* LogTimeExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -225,6 +306,14 @@
 				6A1A2CA71CF834FB00327963 /* LaunchScreen.storyboard in Resources */,
 				6A1A2CA41CF834FB00327963 /* Assets.xcassets in Resources */,
 				6A1A2C9F1CF834FB00327963 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6A1A2CD81CFC535B00327963 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A1A2CE31CFC535B00327963 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,8 +374,8 @@
 			files = (
 				6A1A2CCE1CF87D4A00327963 /* SheetViewController.m in Sources */,
 				6A1A2CBF1CF83ABE00327963 /* LogCell.m in Sources */,
-				6A1A2CB51CF8365700327963 /* Logs+CoreDataProperties.m in Sources */,
 				6A1A2C9C1CF834FB00327963 /* ViewController.m in Sources */,
+				6A1A2CD51CFC464700327963 /* Logs+CoreDataProperties.m in Sources */,
 				6A1A2CC51CF8622600327963 /* NSString+TString.m in Sources */,
 				6A1A2CA21CF834FB00327963 /* LogTime.xcdatamodeld in Sources */,
 				6A1A2CC81CF86A9F00327963 /* NSArray+ZArray.m in Sources */,
@@ -301,7 +390,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6A1A2CD61CFC535B00327963 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A1A2CE01CFC535B00327963 /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6A1A2CE61CFC535B00327963 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A1A2CD91CFC535B00327963 /* LogTimeExtension */;
+			targetProxy = 6A1A2CE51CFC535B00327963 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6A1A2C9D1CF834FB00327963 /* Main.storyboard */ = {
@@ -318,6 +423,14 @@
 				6A1A2CA61CF834FB00327963 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6A1A2CE11CFC535B00327963 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A1A2CE21CFC535B00327963 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -431,6 +544,30 @@
 			};
 			name = Release;
 		};
+		6A1A2CE91CFC535B00327963 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = LogTimeExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rohde-schwarz.LogTime.LogTimeExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6A1A2CEA1CFC535B00327963 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = LogTimeExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rohde-schwarz.LogTime.LogTimeExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -452,15 +589,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		6A1A2CE81CFC535B00327963 /* Build configuration list for PBXNativeTarget "LogTimeExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A1A2CE91CFC535B00327963 /* Debug */,
+				6A1A2CEA1CFC535B00327963 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
 		6A1A2CA01CF834FB00327963 /* LogTime.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				6A1A2CD21CFC45C700327963 /* LogTime 2.xcdatamodel */,
 				6A1A2CA11CF834FB00327963 /* LogTime.xcdatamodel */,
 			);
-			currentVersion = 6A1A2CA11CF834FB00327963 /* LogTime.xcdatamodel */;
+			currentVersion = 6A1A2CD21CFC45C700327963 /* LogTime 2.xcdatamodel */;
 			path = LogTime.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

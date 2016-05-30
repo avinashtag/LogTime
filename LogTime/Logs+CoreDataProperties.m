@@ -1,9 +1,9 @@
 //
 //  Logs+CoreDataProperties.m
-//  LogTime
+//  
 //
-//  Created by Avinash Tag on 27/05/16.
-//  Copyright © 2016 ZooZoo. All rights reserved.
+//  Created by Avinash Tag on 30/05/16.
+//
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
 //  to delete and recreate this implementation file for your updated model.
@@ -14,5 +14,8 @@
 @implementation Logs (CoreDataProperties)
 
 @dynamic stamp;
+@dynamic logTime;
+@dynamic remainingTime;
+@dynamic breakTime;
 
 @end
