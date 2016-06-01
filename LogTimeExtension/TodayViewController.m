@@ -35,4 +35,8 @@
     completionHandler(NCUpdateResultNewData);
 }
 
+- (IBAction)stampDo:(id)sender {
+    
+    
+}
 @end

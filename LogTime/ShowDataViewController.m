@@ -27,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UIView *selectorDate;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UIView *dateSelectorPrevView;
+@property (weak, nonatomic) IBOutlet UIDatePicker *dateTimeSelector;
 @end
 
 @implementation ShowDataViewController
@@ -115,6 +117,35 @@
     
     sheetController = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([SheetViewController class])];
     [self.navigationController pushViewController:sheetController animated:YES];
+}
+
+- (IBAction)logNewEntry:(id)sender {
+    JGActionSheetSection *section = [JGActionSheetSection sectionWithTitle:@"" message:@"" contentView:self.dateSelectorPrevView];
+    sheet = [JGActionSheet actionSheetWithSections:@[section]];
+    [sheet showInView:self.view animated:YES];
+
+}
+
+- (IBAction)dateTimeCancel:(id)sender {
+    [sheet dismissAnimated:YES];
+
+}
+- (IBAction)dateTimeSelected:(id)sender {
+    [sheet dismissAnimated:YES];
+    
+    UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Confirmation" message:@"Are you sure to log the entry." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *yes = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+       
+        Logs *log = (Logs *)[[ModelContext sharedContext ] insertEntity:[Logs class]];
+        log.stamp = self.dateTimeSelector.date;
+        [[ModelContext sharedContext] saveContext];
+    }];
+    
+    [controller setPreferredAction:cancel];
+    [controller setPreferredAction:yes];
+    [self presentViewController:controller animated:yes completion:nil];
+    
 }
 
 @end

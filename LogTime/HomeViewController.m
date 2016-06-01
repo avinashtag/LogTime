@@ -68,16 +68,6 @@
 - (IBAction)markStamp:(id)sender{
     
         Logs *log = (Logs *)[[ModelContext sharedContext ] insertEntity:[Logs class]];
-//        if (i==0) {
-//            log.stamp = [@"30-05-2016 11:00:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"];
-//        }
-//        else if (i==1) {
-//            log.stamp = [@"30-05-2016 16:00:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"];
-//        }
-//        else{
-//            log.stamp = [@"30-05-2016 16:20:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"];
-//        }
-
         log.stamp = [NSDate date];
     [[ModelContext sharedContext] saveContext];
 }

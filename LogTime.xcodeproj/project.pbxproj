@@ -65,6 +65,8 @@
 		6A0C07B41CFEAD0A001D633F /* LogsMonth+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "LogsMonth+CoreDataProperties.m"; path = "LogTime/LogsMonth+CoreDataProperties.m"; sourceTree = "<group>"; };
 		6A0C07B51CFEAD0A001D633F /* LogsMonth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogsMonth.h; path = LogTime/LogsMonth.h; sourceTree = "<group>"; };
 		6A0C07B61CFEAD0A001D633F /* LogsMonth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LogsMonth.m; path = LogTime/LogsMonth.m; sourceTree = "<group>"; };
+		6A0C07B91CFEE89A001D633F /* LogTimeExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LogTimeExtension.entitlements; sourceTree = "<group>"; };
+		6A0C07BA1CFEF1E9001D633F /* LogTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LogTime.entitlements; sourceTree = "<group>"; };
 		6A1A2C911CF834FB00327963 /* LogTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A1A2C951CF834FB00327963 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6A1A2C971CF834FB00327963 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		6A1A2C931CF834FB00327963 /* LogTime */ = {
 			isa = PBXGroup;
 			children = (
+				6A0C07BA1CFEF1E9001D633F /* LogTime.entitlements */,
 				6A1A2C971CF834FB00327963 /* AppDelegate.h */,
 				6A1A2C981CF834FB00327963 /* AppDelegate.m */,
 				6A1A2CB71CF8387500327963 /* ModelContext.h */,
@@ -202,6 +205,7 @@
 		6A1A2CDD1CFC535B00327963 /* LogTimeExtension */ = {
 			isa = PBXGroup;
 			children = (
+				6A0C07B91CFEE89A001D633F /* LogTimeExtension.entitlements */,
 				6A1A2CDE1CFC535B00327963 /* TodayViewController.h */,
 				6A1A2CDF1CFC535B00327963 /* TodayViewController.m */,
 				6A1A2CE11CFC535B00327963 /* MainInterface.storyboard */,
@@ -281,11 +285,21 @@
 				TargetAttributes = {
 					6A1A2C901CF834FB00327963 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = LZTXQ98G2N;
+						DevelopmentTeam = 72JAL55YRS;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					6A1A2CD91CFC535B00327963 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = LZTXQ98G2N;
+						DevelopmentTeam = 72JAL55YRS;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -535,11 +549,14 @@
 			baseConfigurationReference = CDA48CB1BAE473081EDEE1AC /* Pods-LogTime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LogTime/LogTime.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LogTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rohde-schwarz.LogTimes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -548,22 +565,28 @@
 			baseConfigurationReference = F6461853B6C5BF9C5269BFAE /* Pods-LogTime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LogTime/LogTime.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LogTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rohde-schwarz.LogTimes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
 		6A1A2CE91CFC535B00327963 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = LogTimeExtension/LogTimeExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LogTimeExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rohde-schwarz.LogTimes.LogTimeExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -571,11 +594,14 @@
 		6A1A2CEA1CFC535B00327963 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = LogTimeExtension/LogTimeExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LogTimeExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rohde-schwarz.LogTimes.LogTimeExtension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
