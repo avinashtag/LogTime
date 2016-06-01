@@ -1,5 +1,5 @@
 //
-//  Logs+CoreDataProperties.h
+//  LogsMonth+CoreDataProperties.m
 //  LogTime
 //
 //  Created by Avinash Tag on 01/06/16.
@@ -9,14 +9,13 @@
 //  to delete and recreate this implementation file for your updated model.
 //
 
-#import "Logs.h"
+#import "LogsMonth+CoreDataProperties.h"
 
-NS_ASSUME_NONNULL_BEGIN
+@implementation LogsMonth (CoreDataProperties)
 
-@interface Logs (CoreDataProperties)
-
-@property (nullable, nonatomic, retain) NSDate *stamp;
+@dynamic breakTime;
+@dynamic logTime;
+@dynamic remainingTime;
+@dynamic stamp;
 
 @end
-
-NS_ASSUME_NONNULL_END

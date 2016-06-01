@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15B42" minimumToolsVersion="Automatic">
     <entity name="Logs" representedClassName="Logs" syncable="YES">
-        <attribute name="breakTime" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="logTime" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="remainingTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stamp" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="LogsMonth" representedClassName="LogsMonth" syncable="YES">
+        <attribute name="breakTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="logTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="remainingTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="stamp" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Logs" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Logs" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="LogsMonth" positionX="-54" positionY="18" width="128" height="105"/>
     </elements>
 </model>

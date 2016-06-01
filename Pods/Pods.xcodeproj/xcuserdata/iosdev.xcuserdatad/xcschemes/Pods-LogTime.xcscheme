@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '465A726CB9453709F9587D3D'
+               BlueprintIdentifier = '7571E1A0BB9DF98AEA723380'
                BlueprintName = 'Pods-LogTime'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-LogTime.a'>

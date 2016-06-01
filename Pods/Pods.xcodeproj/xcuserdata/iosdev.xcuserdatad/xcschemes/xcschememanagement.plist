@@ -8,25 +8,31 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
+		</dict>
+		<key>NTMonthYearPicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-LogTime.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1A966C32B0C9E44281084B9DA1219B00</key>
+		<key>124983EF4786851945C86B38EF0BA9AA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>38EA2B758DB50530FE7999076E497AEE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>51BA6F624C4ADD4ABC4CB38E53DB38B6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -5,5 +5,6 @@ platform :ios, '8.0'
 
 target 'LogTime' do
 pod 'JGActionSheet'
+pod 'NTMonthYearPicker'
 end
 

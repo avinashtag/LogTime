@@ -15,4 +15,7 @@
 - (NSDate *) nextMonthDate;
 - (NSDate *) eliminateTime;
 - (NSInteger) dateMonth;
+- (NSUInteger) daysInMonthCount;
+- (NSArray *) datesInMonth;
+- (NSDate *) startDateOfMonth;
 @end

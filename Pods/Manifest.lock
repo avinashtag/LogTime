@@ -1,10 +1,13 @@
 PODS:
   - JGActionSheet (1.0.5)
+  - NTMonthYearPicker (1.0.0)
 
 DEPENDENCIES:
   - JGActionSheet
+  - NTMonthYearPicker
 
 SPEC CHECKSUMS:
   JGActionSheet: 2cfca820b57a11ec4b4a5655d45ee599fbeddc05
+  NTMonthYearPicker: 27e1739d6e29428628c8275a7c1a9e4835c352f4
 
 COCOAPODS: 0.39.0

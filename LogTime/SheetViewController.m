@@ -9,6 +9,7 @@
 #import "SheetViewController.h"
 #import "LogCell.h"
 #import "Logs.h"
+#import "LogsMonth.h"
 #import "NSDate+ZDate.h"
 #import "NSString+TString.h"
 #import "ModelContext.h"
@@ -19,6 +20,7 @@
 @interface SheetViewController()<UIPickerViewDelegate,UIPickerViewDataSource>{
     JGActionSheet *sheet;
     NSArray *months;
+    NSArray *years;
 }
 
 @property (nonatomic, strong) NSMutableArray *dataSource;
@@ -48,7 +50,13 @@
                @"November",
                @"December",
                ];
-    [self fetchLogss:[[NSDate date] dateMonth]];
+    years = @[
+               @"2016",
+               @"2017",
+               ];
+    [_monthLabel setText:[[NSDate date] dateStringInFormat:@"MMM/yyyy"] ];
+
+    [self fetchLogss:[NSDate date]];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -69,81 +77,94 @@
     static NSString *identifier = @"cellIdentifier";
     LogCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
-    Logs *log = _dataSource[indexPath.row];
+    LogsMonth *log = _dataSource[indexPath.row];
     
-    [cell.datelog setText:[log.stamp dateStringInFormat:@"dd-MM"]];
-    [cell.timelog setText:log.logTime];
-    [cell.timeRemaining setText:log.remainingTime];
-    [cell.timeBreak setText:log.breakTime];
-    if (indexPath.row%2 == 0) {
-        cell.backgroundColor = [UIColor grayColor];
+    [cell.datelog setText:[[log.stamp dateStringInFormat:@"dd-EEE"] uppercaseString]];
+    [cell.timelog setText:[self stringFromTimeInterval:log.logTime.doubleValue]];
+    [cell.timeRemaining setText:[self stringFromTimeInterval:log.remainingTime.doubleValue]];
+    [cell.timeBreak setText:[self stringFromTimeInterval:log.breakTime.doubleValue]];
+    cell.backgroundColor = [UIColor blueColor];
+    
+    if (log.remainingTime.doubleValue > 0) {
+        cell.backgroundColor = [UIColor redColor];
     }
     else{
-        cell.backgroundColor = [UIColor blueColor];
+        cell.backgroundColor = [UIColor greenColor];
     }
+    
+    
+    if ([[[log.stamp dateStringInFormat:@"EEE"] uppercaseString] isEqualToString:@"SUN"] || [[[log.stamp dateStringInFormat:@"EEE"] uppercaseString] isEqualToString:@"SAT"]) {
+        cell.backgroundColor = [UIColor blackColor];
+    }
+
     return cell;
 }
 
-- (void) fetchLogss:(NSInteger)month{
+- (void) fetchLogss:(NSDate *)dateSelected{
     
-    NSArray *logs = [Logs logsOfMonth:month];
-    [logs enumerateObjectsUsingBlock:^(Logs  *log, NSUInteger idx, BOOL * _Nonnull stop) {
+    
+    _dataSource = [[NSMutableArray alloc]init];
+    
+    NSArray *dates = [dateSelected datesInMonth];
+
+    for (NSDate *date in dates) {
         
-        if (!log.logTime) {
-            [self left:log];
-            [[ModelContext sharedContext] saveContext];
-        }
-    }];
-    _dataSource = [[Logs logsOfMonth:month] mutableCopy];
-    [self.tableView reloadData];
-    
-}
-
-
-
-- (NSTimeInterval) breakTimeFetch:(Logs *)log{
-    __block NSTimeInterval breakTime = 0;
-    
-    NSArray *logs = [Logs logsOfDate:[[NSDate date] eliminateTime]] ;
-    if (logs.count>2) {
+        LogsMonth *monthlog = [LogsMonth logsOfMonth:date];
         
-        [logs splitArray:^(NSArray *outTimes, NSArray *inTimes) {
+        
+        __block NSTimeInterval breakTime = 0;
+        
+        NSArray *logs = [Logs logsOfDate:[date eliminateTime]] ;
+        if (logs.count>2) {
             
-            outTimes  = [outTimes valueForKey:@"stamp"];
-            inTimes   = [inTimes valueForKey:@"stamp"];
-            [inTimes enumerateObjectsUsingBlock:^(NSDate *inTime, NSUInteger idx, BOOL * _Nonnull stop) {
-                if (idx == 0) {
-                    return ;
-                }
+            [logs splitArray:^(NSArray *outTimes, NSArray *inTimes) {
                 
-                @try {
-                    breakTime += [inTime timeIntervalSinceDate:outTimes[idx]];
-                } @catch (NSException *exception) {
+                outTimes  = [outTimes valueForKey:@"stamp"];
+                inTimes   = [inTimes valueForKey:@"stamp"];
+                [inTimes enumerateObjectsUsingBlock:^(NSDate *inTime, NSUInteger idx, BOOL * _Nonnull stop) {
+                    if (idx == 0) {
+                        return ;
+                    }
                     
-                }
+                    @try {
+                        breakTime += [inTime timeIntervalSinceDate:outTimes[idx-1]];
+                    } @catch (NSException *exception) {
+                        
+                    }
+                }];
             }];
-        }];
+        }
+        
+        monthlog.stamp = date;
+        monthlog.breakTime = @(breakTime);
+        [self left:monthlog breaktime:breakTime];
+    
     }
-    log.breakTime = [self stringFromTimeInterval:breakTime];
-    return breakTime;
+    [[ModelContext sharedContext] saveContext];
+        
+
+    
+    _dataSource = [[LogsMonth logsFrom:dates.firstObject to:dates.lastObject ] mutableCopy];
+    [self.tableView reloadData];
+    [self check];
 }
 
-- (NSTimeInterval) lapse:(Logs *)log{
+- (NSTimeInterval) lapse:(LogsMonth *)log breaktime:(NSTimeInterval)breakTime{
     
     __block NSTimeInterval lapsed = 0;
-    NSArray *logs = [Logs logsOfDate:[[NSDate date] eliminateTime]] ;
+    NSArray *logs = [Logs logsOfDate:[log.stamp eliminateTime]] ;
     if (logs.count>0) {
         NSDate *firstIn = [[logs firstObject] valueForKeyPath:@"stamp"];
-        lapsed  = [firstIn timeIntervalSinceNow];
-        lapsed -= [self breakTimeFetch:log];
+        lapsed  = [[NSDate date] timeIntervalSinceDate:firstIn];
+        lapsed -= breakTime;
     }
-    log.logTime = [self stringFromTimeInterval:lapsed];
+    log.logTime = @(lapsed);
     return lapsed;
 }
-- (void) left:(Logs *)log{
-    __block NSTimeInterval remaining = [[@"27-05-2016 00:00:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"] timeIntervalSinceDate:[@"27-05-2016 09:00:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"]];
-    remaining -= [self lapse:log];
-    log.remainingTime = [self stringFromTimeInterval:remaining];
+- (void) left:(LogsMonth *)log breaktime:(NSTimeInterval)breakTime{
+    __block NSTimeInterval remaining = [[@"27-05-2016 09:00:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"] timeIntervalSinceDate:[@"27-05-2016 00:00:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"]];
+    remaining -= [self lapse:log breaktime:breakTime];
+    log.remainingTime = @(remaining);
 }
 
 - (NSString *)stringFromTimeInterval:(NSTimeInterval)interval {
@@ -151,7 +172,11 @@
     NSInteger seconds = ti % 60;
     NSInteger minutes = (ti / 60) % 60;
     NSInteger hours = (ti / 3600);
-    return [[NSString stringWithFormat:@"%02ld:%02ld:%02ld", (long)hours, (long)minutes, (long)seconds] stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    NSString *time = [NSString stringWithFormat:@"%02ld:%02ld:%02ld", (long)hours, (long)minutes, (long)seconds] ;
+    if ([time containsString:@"-"]) {
+        return [NSString stringWithFormat:@"-%@",[time stringByReplacingOccurrencesOfString:@"-" withString:@""]];
+    }
+    return time;
 }
 
 - (IBAction)cancel:(id)sender {
@@ -160,8 +185,11 @@
 - (IBAction)done:(id)sender {
     
     [sheet dismissAnimated:YES];
-    [_monthLabel setText:[months objectAtIndex:[self.monthPicker selectedRowInComponent:0]] ];
-    [self fetchLogss:[self.monthPicker selectedRowInComponent:0]+1];
+    
+    NSString *dateString = [NSString stringWithFormat:@"01/%@/%@",months[[self.monthPicker selectedRowInComponent:0]], years[[self.monthPicker selectedRowInComponent:1]]];
+    NSDate *selectedDate = [dateString dateInFormat:@"dd/MMMM/yyyy"];
+    [_monthLabel setText:[selectedDate dateStringInFormat:@"MMM/yyyy"] ];
+    [self fetchLogss:selectedDate];
 }
 - (IBAction)openMonthPicker:(id)sender {
     
@@ -172,16 +200,36 @@
 
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return 1;
+    return 2;
 }
 
 // returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    
-    return months.count;
+    return (component==0) ? months.count : years.count;
 }
 
 - (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    return months[row];
+    return (component==0) ? months[row] : years[row];
 }
+
+
+- (void) check{
+    
+    NSArray *logs = [LogsMonth logsFrom:[[NSDate date] startDateOfMonth] to:[NSDate date]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.logTime > 0"];
+    NSArray *filteredLogs = [logs filteredArrayUsingPredicate:predicate];
+    
+    NSTimeInterval totalExpected = [[@"27-05-2016 09:00:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"] timeIntervalSinceDate:[@"27-05-2016 00:00:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"]];
+    totalExpected *= filteredLogs.count;
+    
+    NSTimeInterval total = [[filteredLogs valueForKeyPath:@"@sum.logTime"] doubleValue];
+    if (total>totalExpected) {
+        NSLog(@"OK");
+    }
+    else{
+        NSLog(@"Not Ok");
+    }
+    
+}
+
 @end

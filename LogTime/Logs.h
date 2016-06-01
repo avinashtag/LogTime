@@ -11,29 +11,13 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSUInteger, LogMonth) {
-    
-    Jan = 1,
-    Feb,
-    Mar,
-    Apr,
-    May,
-    Jun,
-    Jul,
-    Aug,
-    Sep,
-    Oct,
-    Nov,
-    Dec,
-};
-
 
 
 @interface Logs : NSManagedObject
 
 // Insert code here to declare functionality of your managed object subclass
 + (NSArray *)logsOfDate:(NSDate *)date;
-+ (NSArray *)logsOfMonth:(LogMonth)month;
++ (NSArray *)logs:(NSInteger)month;
 @end
 
 NS_ASSUME_NONNULL_END

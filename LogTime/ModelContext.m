@@ -161,6 +161,12 @@
     return (fetchedObjects.count) ? fetchedObjects[0] : nil;
 }
 
+- (NSManagedObject *) fetchEntity:(Class)classs perdicate:(NSPredicate *)predicate sortKey:(NSString *)sortKey ascending:(BOOL)ascending{
+    
+    NSArray *fetchedObjects = [self fetchEntities:classs perdicate:predicate sortKey:sortKey ascending:ascending];
+    return (fetchedObjects.count) ? fetchedObjects[0] : nil;
+}
+
 -(void)removeIfExist:(Class)classs{
     
     NSArray *objects = [self fetchEntities:classs];

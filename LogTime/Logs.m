@@ -20,9 +20,10 @@
     return [[ModelContext sharedContext] fetchEntities:[Logs class] perdicate:[NSPredicate predicateWithFormat:@"stamp >= %@ AND stamp < %@", date , [date nextDate]] sortKey:@"stamp" ascending:YES];
 }
 
-+ (NSArray *)logsOfMonth:(LogMonth)month{
++ (NSArray *)logs:(NSInteger)month{
     
-   NSDate *date = [[NSString stringWithFormat:@"01-%lu-2016",(unsigned long)month] dateInFormat:@"dd-MM-yyyy"];    
+    NSDate *date = [[NSString stringWithFormat:@"01-%lu-2016",(unsigned long)month] dateInFormat:@"dd-MM-yyyy"];
     return [[ModelContext sharedContext] fetchEntities:[Logs class] perdicate:[NSPredicate predicateWithFormat:@"stamp >= %@ AND stamp < %@", date , [date nextMonthDate]] sortKey:@"stamp" ascending:YES];
 }
+
 @end

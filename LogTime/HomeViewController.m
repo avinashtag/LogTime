@@ -98,7 +98,7 @@
                 }
                 
                 @try {
-                    breakTime += [inTime timeIntervalSinceDate:outTimes[idx]];
+                    breakTime += [inTime timeIntervalSinceDate:outTimes[idx-1]];
                 } @catch (NSException *exception) {
                     
                 }

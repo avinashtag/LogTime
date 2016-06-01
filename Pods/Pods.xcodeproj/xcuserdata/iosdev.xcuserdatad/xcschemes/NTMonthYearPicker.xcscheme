@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B974D09322CD8974349B23F0'
-               BlueprintName = 'JGActionSheet'
+               BlueprintIdentifier = 'A39E1A89B2DFFFDA354C55D0'
+               BlueprintName = 'NTMonthYearPicker'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libJGActionSheet.a'>
+               BuildableName = 'libNTMonthYearPicker.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

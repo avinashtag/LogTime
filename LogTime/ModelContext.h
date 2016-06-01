@@ -29,4 +29,5 @@
 - (NSArray <NSManagedObject *>*) fetchEntities:(Class)classs perdicate:(NSPredicate *)predicate sortKey:(NSString *)sortKey ascending:(BOOL)ascending;
 - (NSManagedObject *) fetchEntity:(Class)classs;
 - (NSManagedObject *) fetchEntity:(Class)classs perdicate:(NSPredicate *)predicate;
+- (NSManagedObject *) fetchEntity:(Class)classs perdicate:(NSPredicate *)predicate sortKey:(NSString *)sortKey ascending:(BOOL)ascending;
 @end
