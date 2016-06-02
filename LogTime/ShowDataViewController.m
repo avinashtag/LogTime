@@ -111,6 +111,7 @@
     [sheet dismissAnimated:YES];
     _selectedDate = [self.datePicker date];
     [_dateLabel setText:[_selectedDate dateStringInFormat:@"dd-MMM"]];
+    [self fetchLogs];
 }
 
 - (IBAction)showAll:(id)sender {
@@ -140,10 +141,10 @@
         Logs *log = (Logs *)[[ModelContext sharedContext ] insertEntity:[Logs class]];
         log.stamp = self.dateTimeSelector.date;
         [[ModelContext sharedContext] saveContext];
+        [self fetchLogs];
     }];
-    
-    [controller setPreferredAction:cancel];
-    [controller setPreferredAction:yes];
+    [controller addAction:cancel];
+    [controller addAction:yes];
     [self presentViewController:controller animated:yes completion:nil];
     
 }

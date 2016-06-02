@@ -155,14 +155,15 @@
     NSArray *logs = [Logs logsOfDate:[log.stamp eliminateTime]] ;
     if (logs.count>0) {
         NSDate *firstIn = [[logs firstObject] valueForKeyPath:@"stamp"];
-        lapsed  = [[NSDate date] timeIntervalSinceDate:firstIn];
+        lapsed  = [[[logs lastObject] valueForKeyPath:@"stamp"] timeIntervalSinceDate:firstIn];
         lapsed -= breakTime;
     }
     log.logTime = @(lapsed);
     return lapsed;
 }
+
 - (void) left:(LogsMonth *)log breaktime:(NSTimeInterval)breakTime{
-    __block NSTimeInterval remaining = [[@"27-05-2016 09:00:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"] timeIntervalSinceDate:[@"27-05-2016 00:00:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"]];
+    __block NSTimeInterval remaining = [[@"27-05-2016 08:30:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"] timeIntervalSinceDate:[@"27-05-2016 00:00:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"]];
     remaining -= [self lapse:log breaktime:breakTime];
     log.remainingTime = @(remaining);
 }

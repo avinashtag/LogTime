@@ -31,6 +31,15 @@
 		6A1A2CE01CFC535B00327963 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CDF1CFC535B00327963 /* TodayViewController.m */; };
 		6A1A2CE31CFC535B00327963 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1A2CE11CFC535B00327963 /* MainInterface.storyboard */; };
 		6A1A2CE71CFC535B00327963 /* LogTimeExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6A1A2CDA1CFC535B00327963 /* LogTimeExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6A26C4EE1D001F0C00C70AE1 /* LogTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CA01CF834FB00327963 /* LogTime.xcdatamodeld */; };
+		6A26C4EF1D00237E00C70AE1 /* LogsMonth+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C07B41CFEAD0A001D633F /* LogsMonth+CoreDataProperties.m */; };
+		6A26C4F01D00238100C70AE1 /* LogsMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C07B61CFEAD0A001D633F /* LogsMonth.m */; };
+		6A26C4F11D00238300C70AE1 /* Logs+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C07B11CFEAC7A001D633F /* Logs+CoreDataProperties.m */; };
+		6A26C4F21D00238600C70AE1 /* Logs.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CB41CF8365700327963 /* Logs.m */; };
+		6A26C4F31D00259300C70AE1 /* NSDate+ZDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CC11CF83BB100327963 /* NSDate+ZDate.m */; };
+		6A26C4F41D0025AF00C70AE1 /* NSString+TString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CC41CF8622600327963 /* NSString+TString.m */; };
+		6A26C4F51D0025D400C70AE1 /* ModelContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CB81CF8387500327963 /* ModelContext.m */; };
+		6A26C4F61D002A6300C70AE1 /* LogTime.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 6A1A2CA01CF834FB00327963 /* LogTime.xcdatamodeld */; };
 		F4CF07CC3131087AF1E93CE2 /* libPods-LogTime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0ED4EDA40A60A5A49F0DC6 /* libPods-LogTime.a */; };
 /* End PBXBuildFile section */
 
@@ -285,7 +294,7 @@
 				TargetAttributes = {
 					6A1A2C901CF834FB00327963 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 72JAL55YRS;
+						DevelopmentTeam = F9J8Z348CM;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -294,7 +303,7 @@
 					};
 					6A1A2CD91CFC535B00327963 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 72JAL55YRS;
+						DevelopmentTeam = F9J8Z348CM;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -337,6 +346,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A26C4F61D002A6300C70AE1 /* LogTime.xcdatamodeld in Resources */,
 				6A1A2CE31CFC535B00327963 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,7 +430,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A26C4EF1D00237E00C70AE1 /* LogsMonth+CoreDataProperties.m in Sources */,
+				6A26C4F01D00238100C70AE1 /* LogsMonth.m in Sources */,
 				6A1A2CE01CFC535B00327963 /* TodayViewController.m in Sources */,
+				6A26C4F41D0025AF00C70AE1 /* NSString+TString.m in Sources */,
+				6A26C4F51D0025D400C70AE1 /* ModelContext.m in Sources */,
+				6A26C4EE1D001F0C00C70AE1 /* LogTime.xcdatamodeld in Sources */,
+				6A26C4F31D00259300C70AE1 /* NSDate+ZDate.m in Sources */,
+				6A26C4F21D00238600C70AE1 /* Logs.m in Sources */,
+				6A26C4F11D00238300C70AE1 /* Logs+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +498,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rahul Bhatnagar (49WDKE4U86)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rahul Bhatnagar (49WDKE4U86)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -502,6 +521,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "2b614531-a9c3-4a86-b5f4-27776b0f0bec";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -524,7 +544,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rahul Bhatnagar (49WDKE4U86)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rahul Bhatnagar (49WDKE4U86)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -539,6 +560,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "2b614531-a9c3-4a86-b5f4-27776b0f0bec";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -550,13 +572,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LogTime/LogTime.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rahul Bhatnagar (49WDKE4U86)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rahul Bhatnagar (49WDKE4U86)";
 				INFOPLIST_FILE = LogTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rohde-schwarz.LogTimes";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zoozoo.logTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2b614531-a9c3-4a86-b5f4-27776b0f0bec";
 			};
 			name = Debug;
 		};
@@ -566,13 +588,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LogTime/LogTime.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rahul Bhatnagar (49WDKE4U86)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rahul Bhatnagar (49WDKE4U86)";
 				INFOPLIST_FILE = LogTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rohde-schwarz.LogTimes";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zoozoo.logTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "2b614531-a9c3-4a86-b5f4-27776b0f0bec";
 			};
 			name = Release;
 		};
@@ -580,13 +602,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = LogTimeExtension/LogTimeExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rahul Bhatnagar (49WDKE4U86)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rahul Bhatnagar (49WDKE4U86)";
 				INFOPLIST_FILE = LogTimeExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rohde-schwarz.LogTimes.LogTimeExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zoozoo.logTime.LogTimeExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a911fa0a-6514-411e-8136-09bbda5004dd";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -595,13 +617,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = LogTimeExtension/LogTimeExtension.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Rahul Bhatnagar (49WDKE4U86)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Rahul Bhatnagar (49WDKE4U86)";
 				INFOPLIST_FILE = LogTimeExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rohde-schwarz.LogTimes.LogTimeExtension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zoozoo.logTime.LogTimeExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a911fa0a-6514-411e-8136-09bbda5004dd";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

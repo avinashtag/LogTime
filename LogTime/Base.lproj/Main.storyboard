@@ -155,7 +155,6 @@
                                         <state key="normal" title="Log Entry"/>
                                         <connections>
                                             <action selector="logNewEntry:" destination="Xmt-VT-CmL" eventType="touchUpInside" id="GAr-l5-922"/>
-                                            <action selector="openDateSelector:" destination="Xmt-VT-CmL" eventType="touchUpInside" id="eTY-Cn-P5m"/>
                                         </connections>
                                     </button>
                                 </subviews>
