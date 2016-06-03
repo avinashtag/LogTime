@@ -24,11 +24,13 @@
 }
 
 @property (weak, nonatomic) IBOutlet UIView *header;
+@property (weak, nonatomic) IBOutlet UIView *footer;
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (weak, nonatomic) IBOutlet UIPickerView *monthPicker;
 @property (weak, nonatomic) IBOutlet UIView *pickerMonthView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *monthLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalRemainingHours;
 
 @end
 
@@ -58,13 +60,26 @@
     [_monthLabel setText:[[NSDate date] dateStringInFormat:@"MMM/yyyy"] ];
 
     [self fetchLogss:[NSDate date]];
+    
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 44.0;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 44.0;
+}
+
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     return _header;
+}
+
+
+- (nullable UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    [self remainigHours];
+    return _footer;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -236,4 +251,14 @@
     
 }
 
+- (void) remainigHours{
+    
+    if (_dataSource.count) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.logTime > 0"];
+        NSArray *filteredLogs = [_dataSource filteredArrayUsingPredicate:predicate];
+
+        NSTimeInterval remain = [[filteredLogs valueForKeyPath:@"@sum.remainingTime"] doubleValue];
+        [_totalRemainingHours setText:[self stringFromTimeInterval:remain]];
+    }
+}
 @end
