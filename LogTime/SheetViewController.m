@@ -23,6 +23,7 @@
     NSArray *years;
 }
 
+@property (weak, nonatomic) IBOutlet UIView *header;
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (weak, nonatomic) IBOutlet UIPickerView *monthPicker;
 @property (weak, nonatomic) IBOutlet UIView *pickerMonthView;
@@ -60,9 +61,11 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 1.0;
+    return 44.0;
 }
-
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    return _header;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     

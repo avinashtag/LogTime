@@ -14,17 +14,20 @@
 #import "NSArray+ZArray.h"
 #import "NSString+TString.h"
 #import "NSObject+ATObject.h"
+#import "LModel.h"
 
 
 @interface HomeViewController (){
     ShowDataViewController *showData;
     dispatch_source_t refresh;
+    LModel *localLog;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *lapsedTime;
 @property (weak, nonatomic) IBOutlet UILabel *remainingTime;
 @property (weak, nonatomic) IBOutlet UILabel *breakTime;
 @property (weak, nonatomic) IBOutlet UIButton *stamp;
+@property (weak, nonatomic) IBOutlet UILabel *logOutTime;
 @end
 
 @implementation HomeViewController
@@ -33,6 +36,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"Baapu MCD";
+    localLog = [[LModel alloc]init];
+    localLog.stamp = [NSDate date];
     [_stamp.layer setCornerRadius:_stamp.frame.size.width/2];
     [_stamp setTitle:@"STAMP" forState:UIControlStateNormal];
     [_stamp.layer setBorderWidth:3.0];
@@ -40,6 +45,17 @@
     refresh = [self createGCDTimer:1 queue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0) eventHandler:^{
     
         [self left];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_lapsedTime setText:[self stringFromTimeInterval:localLog.logTime]];
+            [_breakTime setText:[self stringFromTimeInterval:localLog.breakTime]];
+            [_remainingTime setText:[self stringFromTimeInterval:localLog.remainingTime]];
+            [self expectedLogOut];
+//            [NSString stringWithFormat:@"%@-%@-%@ %@:%@:%@", [[NSDate date] dateStringInFormat:@"dd-MM-yyyy"], ]
+//            NSDate *logout = [localLog.logout dateByAddingTimeInterval:localLog.logTime+localLog.remainingTime];
+            
+//            [_breakTime setText:[logout dateStringInFormat:@"%@HH:mm:ss"]];
+        });
     }];
     dispatch_resume(refresh);
 }
@@ -73,17 +89,19 @@
 }
 
 - (NSTimeInterval) breakTimeFetch{
+    
     __block NSTimeInterval breakTime = 0;
-
+    
     NSArray *logs = [Logs logsOfDate:[[NSDate date] eliminateTime]] ;
     if (logs.count>2) {
         
         [logs splitArray:^(NSArray *outTimes, NSArray *inTimes) {
-           
+            
             outTimes  = [outTimes valueForKey:@"stamp"];
             inTimes   = [inTimes valueForKey:@"stamp"];
             [inTimes enumerateObjectsUsingBlock:^(NSDate *inTime, NSUInteger idx, BOOL * _Nonnull stop) {
                 if (idx == 0) {
+                    localLog.logout = inTime;
                     return ;
                 }
                 
@@ -95,35 +113,36 @@
             }];
         }];
     }
-    dispatch_async(dispatch_get_main_queue(), ^{
-       
-        [_breakTime setText:[self stringFromTimeInterval:breakTime]];
-    });
     return breakTime;
 }
 
 - (NSTimeInterval) lapse{
     
+    
+    
     __block NSTimeInterval lapsed = 0;
     NSArray *logs = [Logs logsOfDate:[[NSDate date] eliminateTime]] ;
     if (logs.count>0) {
         NSDate *firstIn = [[logs firstObject] valueForKeyPath:@"stamp"];
-        lapsed  = [firstIn timeIntervalSinceNow];
-        lapsed -= [self breakTimeFetch];
+        if (logs.count>1) {
+            lapsed  = [[[logs lastObject] valueForKeyPath:@"stamp"] timeIntervalSinceDate:firstIn];
+        }
+        else
+            lapsed  = [[NSDate date] timeIntervalSinceDate:firstIn];
+
+        localLog.breakTime = [self breakTimeFetch];
+        lapsed -= localLog.breakTime;
     }
-    dispatch_async(dispatch_get_main_queue(), ^{
-        
-        [_lapsedTime setText:[self stringFromTimeInterval:lapsed]];
-    });
     return lapsed;
 }
+
+
 - (void) left{
-    __block NSTimeInterval remaining = [[@"27-05-2016 00:00:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"] timeIntervalSinceDate:[@"27-05-2016 09:00:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"]];
-    remaining -= [self lapse];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        
-        [_remainingTime setText:[self stringFromTimeInterval:remaining]];
-    });
+    
+    __block NSTimeInterval remaining = [[@"27-05-2016 08:30:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"] timeIntervalSinceDate:[@"27-05-2016 00:00:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"]];
+    localLog.logTime = [self lapse];
+    remaining -= localLog.logTime;
+    localLog.remainingTime = remaining;
 }
 
 - (NSString *)stringFromTimeInterval:(NSTimeInterval)interval {
@@ -131,7 +150,26 @@
     NSInteger seconds = ti % 60;
     NSInteger minutes = (ti / 60) % 60;
     NSInteger hours = (ti / 3600);
-    return [[NSString stringWithFormat:@"%02ld:%02ld:%02ld", (long)hours, (long)minutes, (long)seconds] stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    NSString *time = [NSString stringWithFormat:@"%02ld:%02ld:%02ld", (long)hours, (long)minutes, (long)seconds] ;
+    if ([time containsString:@"-"]) {
+        return [NSString stringWithFormat:@"-%@",[time stringByReplacingOccurrencesOfString:@"-" withString:@""]];
+    }
+    return time;
+}
+- (void) expectedLogOut{
+    
+    NSTimeInterval workHr = [[@"27-05-2016 08:30:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"] timeIntervalSinceDate:[@"27-05-2016 00:00:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"]];
+    @try {
+        Logs *log = [Logs logsOfDate:[[NSDate date] eliminateTime]][0] ;
+        NSDate *ex = [[log.stamp dateByAddingTimeInterval:workHr] dateByAddingTimeInterval:localLog.breakTime];
+        [_logOutTime setText:[ex dateStringInFormat:@"HH:mm:ss"]];
+
+    } @catch (NSException *exception) {
+        
+        
+        
+    }
+    
 }
 
 @end
