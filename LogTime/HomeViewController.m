@@ -155,7 +155,7 @@
     NSArray *logs = [Logs logsOfDate:[[NSDate date] eliminateTime]] ;
     if (logs.count>0) {
         NSDate *firstIn = [[logs firstObject] valueForKeyPath:@"stamp"];
-        if (logs.count>1) {
+        if (logs.count%2==0) {
             lapsed  = [[[logs lastObject] valueForKeyPath:@"stamp"] timeIntervalSinceDate:firstIn];
         }
         else

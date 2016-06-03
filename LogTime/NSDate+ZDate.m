@@ -47,6 +47,13 @@
     return tomorrow;
 }
 
+- (BOOL) isToday{
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    return [calendar isDateInToday:self];
+}
+
+
 - (NSDate *) eliminateTime{
     return [[self dateStringInFormat:@"dd-MM-yyyy"] dateInFormat:@"dd-MM-yyyy"];
 }

@@ -18,4 +18,5 @@
 - (NSUInteger) daysInMonthCount;
 - (NSArray *) datesInMonth;
 - (NSDate *) startDateOfMonth;
+- (BOOL) isToday;
 @end

@@ -173,7 +173,7 @@
     NSArray *logs = [Logs logsOfDate:[log.stamp eliminateTime]] ;
     if (logs.count>0) {
         NSDate *firstIn = [[logs firstObject] valueForKeyPath:@"stamp"];
-        lapsed  = [[[logs lastObject] valueForKeyPath:@"stamp"] timeIntervalSinceDate:firstIn];
+        lapsed =  [firstIn isToday] ? [[NSDate date] timeIntervalSinceDate:firstIn] : [[[logs lastObject] valueForKeyPath:@"stamp"] timeIntervalSinceDate:firstIn];
         lapsed -= breakTime;
     }
     log.logTime = @(lapsed);
@@ -283,8 +283,9 @@
     
     if (_dataSource.count) {
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.logTime > 0"];
-        NSArray *filteredLogs = [_dataSource filteredArrayUsingPredicate:predicate];
-
+        NSMutableArray *filteredLogss = [[_dataSource filteredArrayUsingPredicate:predicate] mutableCopy];
+        [filteredLogss removeLastObject];
+        NSArray *filteredLogs = filteredLogss;
         NSTimeInterval remain = [[filteredLogs valueForKeyPath:@"@sum.remainingTime"] doubleValue];
         
         NSTimeInterval workHr = [[@"27-05-2016 08:30:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"] timeIntervalSinceDate:[@"27-05-2016 00:00:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"]];
