@@ -251,6 +251,34 @@
     
 }
 
+
+- (NSTimeInterval) breakTimeFetchToday{
+    
+    __block NSTimeInterval breakTime = 0;
+    
+    NSArray *logs = [Logs logsOfDate:[[NSDate date] eliminateTime]] ;
+    if (logs.count>2) {
+        
+        [logs splitArray:^(NSArray *outTimes, NSArray *inTimes) {
+            
+            outTimes  = [outTimes valueForKey:@"stamp"];
+            inTimes   = [inTimes valueForKey:@"stamp"];
+            [inTimes enumerateObjectsUsingBlock:^(NSDate *inTime, NSUInteger idx, BOOL * _Nonnull stop) {
+                if (idx == 0) {
+                    return ;
+                }
+                
+                @try {
+                    breakTime += [inTime timeIntervalSinceDate:outTimes[idx-1]];
+                } @catch (NSException *exception) {
+                    
+                }
+            }];
+        }];
+    }
+    return breakTime;
+}
+
 - (void) remainigHours{
     
     if (_dataSource.count) {
@@ -258,7 +286,26 @@
         NSArray *filteredLogs = [_dataSource filteredArrayUsingPredicate:predicate];
 
         NSTimeInterval remain = [[filteredLogs valueForKeyPath:@"@sum.remainingTime"] doubleValue];
-        [_totalRemainingHours setText:[self stringFromTimeInterval:remain]];
+        
+        NSTimeInterval workHr = [[@"27-05-2016 08:30:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"] timeIntervalSinceDate:[@"27-05-2016 00:00:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"]];
+        @try {
+            Logs *log = [Logs logsOfDate:[[NSDate date] eliminateTime]][0] ;
+            NSDate *ex = [[[log.stamp dateByAddingTimeInterval:workHr] dateByAddingTimeInterval:[self breakTimeFetchToday]] dateByAddingTimeInterval:remain];
+            [_totalRemainingHours setText:[NSString stringWithFormat:@"Remaining Hours: %@\nLogOut: %@",[self stringFromTimeInterval:remain], [ex dateStringInFormat:@"dd/MMM HH:mm:ss"]]];
+   
+        } @catch (NSException *exception) {
+            
+            
+            
+        }
+        
+
+
+        
     }
 }
+
+
+
+
 @end
