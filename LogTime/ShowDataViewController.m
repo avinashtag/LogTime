@@ -82,9 +82,31 @@
         cell.backgroundColor = [UIColor blueColor];
         [cell.time setTextColor:[UIColor whiteColor]];
     }
+    if (log.mark.boolValue) {
+        cell.backgroundColor = [UIColor greenColor];
+    }
     return cell;
 }
 
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        Logs *log = _dataSource[indexPath.row];
+        log.mark = @(!log.mark.boolValue);
+        [[ModelContext sharedContext] saveContext];
+        [tableView reloadData];
+//        [_objects removeObjectAtIndex:indexPath.row];
+//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else {
+//        NSLog(@"Unhandled editing style! %d", editingStyle);
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return @"Mark";
+}
 - (void) fetchLogs{
    
     _dataSource = [[Logs logsOfDate:[_selectedDate eliminateTime]] mutableCopy];

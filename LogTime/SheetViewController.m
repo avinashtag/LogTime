@@ -132,7 +132,7 @@
         
         __block NSTimeInterval breakTime = 0;
         
-        NSArray *logs = [Logs logsOfDate:[date eliminateTime]] ;
+        NSArray *logs = [[Logs logsOfDate:[date eliminateTime]]filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SELF.mark == NO"]] ;
         if (logs.count>2) {
             
             [logs splitArray:^(NSArray *outTimes, NSArray *inTimes) {
@@ -170,7 +170,7 @@
 - (NSTimeInterval) lapse:(LogsMonth *)log breaktime:(NSTimeInterval)breakTime{
     
     __block NSTimeInterval lapsed = 0;
-    NSArray *logs = [Logs logsOfDate:[log.stamp eliminateTime]] ;
+    NSArray *logs = [[Logs logsOfDate:[log.stamp eliminateTime]] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SELF.mark == NO"]];
     if (logs.count>0) {
         NSDate *firstIn = [[logs firstObject] valueForKeyPath:@"stamp"];
         lapsed =  [firstIn isToday] ? [[NSDate date] timeIntervalSinceDate:firstIn] : [[[logs lastObject] valueForKeyPath:@"stamp"] timeIntervalSinceDate:firstIn];
@@ -256,7 +256,7 @@
     
     __block NSTimeInterval breakTime = 0;
     
-    NSArray *logs = [Logs logsOfDate:[[NSDate date] eliminateTime]] ;
+    NSArray *logs = [[Logs logsOfDate:[[NSDate date] eliminateTime]]filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SELF.mark == NO"]] ;
     if (logs.count>2) {
         
         [logs splitArray:^(NSArray *outTimes, NSArray *inTimes) {
@@ -290,7 +290,7 @@
         
         NSTimeInterval workHr = [[@"27-05-2016 08:30:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"] timeIntervalSinceDate:[@"27-05-2016 00:00:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"]];
         @try {
-            Logs *log = [Logs logsOfDate:[[NSDate date] eliminateTime]][0] ;
+            Logs *log = [[Logs logsOfDate:[[NSDate date] eliminateTime]]filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SELF.mark == NO"]].firstObject ;
             NSDate *ex = [[[log.stamp dateByAddingTimeInterval:workHr] dateByAddingTimeInterval:[self breakTimeFetchToday]] dateByAddingTimeInterval:remain];
             [_totalRemainingHours setText:[NSString stringWithFormat:@"Remaining Hours: %@\nLogOut: %@",[self stringFromTimeInterval:remain], [ex dateStringInFormat:@"dd/MMM HH:mm:ss"]]];
    

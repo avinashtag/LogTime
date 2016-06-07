@@ -32,6 +32,18 @@
 
 @implementation HomeViewController
 
+
+- (void)tempFunction{
+    
+    NSArray *allLogs = [Logs logs:6];
+    [allLogs enumerateObjectsUsingBlock:^(Logs  *log, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+       
+        log.mark = @(NO);
+    }];
+    [[ModelContext sharedContext] saveContext];
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -42,6 +54,11 @@
     [_stamp setTitle:@"STAMP" forState:UIControlStateNormal];
     [_stamp.layer setBorderWidth:3.0];
     [_stamp.layer setBorderColor:[UIColor blueColor].CGColor];
+//    [self tempFunction];
+    
+    
+    
+    
     refresh = [self createGCDTimer:1 queue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0) eventHandler:^{
     
         [self left];
@@ -123,7 +140,7 @@
     
     __block NSTimeInterval breakTime = 0;
     
-    NSArray *logs = [Logs logsOfDate:[[NSDate date] eliminateTime]] ;
+    NSArray *logs = [[Logs logsOfDate:[[NSDate date] eliminateTime]] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SELF.mark == NO"]] ;
     if (logs.count>2) {
         
         [logs splitArray:^(NSArray *outTimes, NSArray *inTimes) {
@@ -152,7 +169,8 @@
     
     
     __block NSTimeInterval lapsed = 0;
-    NSArray *logs = [Logs logsOfDate:[[NSDate date] eliminateTime]] ;
+    NSArray *temp = [Logs logsOfDate:[[NSDate date] eliminateTime]];
+    NSArray *logs = [[Logs logsOfDate:[[NSDate date] eliminateTime]] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SELF.mark == NO"]];
     if (logs.count>0) {
         NSDate *firstIn = [[logs firstObject] valueForKeyPath:@"stamp"];
         if (logs.count%2==0) {
@@ -191,7 +209,7 @@
     
     NSTimeInterval workHr = [[@"27-05-2016 08:30:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"] timeIntervalSinceDate:[@"27-05-2016 00:00:00" dateInFormat:@"dd-MM-yyyy HH:mm:ss"]];
     @try {
-        Logs *log = [Logs logsOfDate:[[NSDate date] eliminateTime]][0] ;
+        Logs *log = [[Logs logsOfDate:[[NSDate date] eliminateTime]]filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"SELF.mark == NO"]].firstObject ;
         NSDate *ex = [[log.stamp dateByAddingTimeInterval:workHr] dateByAddingTimeInterval:localLog.breakTime];
         [_logOutTime setText:[ex dateStringInFormat:@"HH:mm:ss"]];
 

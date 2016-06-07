@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A0C07B21CFEAC7A001D633F /* Logs+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C07B11CFEAC7A001D633F /* Logs+CoreDataProperties.m */; };
 		6A0C07B71CFEAD0A001D633F /* LogsMonth+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C07B41CFEAD0A001D633F /* LogsMonth+CoreDataProperties.m */; };
 		6A0C07B81CFEAD0A001D633F /* LogsMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C07B61CFEAD0A001D633F /* LogsMonth.m */; };
 		6A1A2C961CF834FB00327963 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2C951CF834FB00327963 /* main.m */; };
@@ -18,7 +17,6 @@
 		6A1A2CA41CF834FB00327963 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A1A2CA31CF834FB00327963 /* Assets.xcassets */; };
 		6A1A2CA71CF834FB00327963 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1A2CA51CF834FB00327963 /* LaunchScreen.storyboard */; };
 		6A1A2CB01CF8359F00327963 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CAF1CF8359F00327963 /* HomeViewController.m */; };
-		6A1A2CB61CF8365700327963 /* Logs.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CB41CF8365700327963 /* Logs.m */; };
 		6A1A2CB91CF8387500327963 /* ModelContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CB81CF8387500327963 /* ModelContext.m */; };
 		6A1A2CBC1CF839BB00327963 /* ShowDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CBB1CF839BB00327963 /* ShowDataViewController.m */; };
 		6A1A2CBF1CF83ABE00327963 /* LogCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CBE1CF83ABE00327963 /* LogCell.m */; };
@@ -34,13 +32,15 @@
 		6A26C4EE1D001F0C00C70AE1 /* LogTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CA01CF834FB00327963 /* LogTime.xcdatamodeld */; };
 		6A26C4EF1D00237E00C70AE1 /* LogsMonth+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C07B41CFEAD0A001D633F /* LogsMonth+CoreDataProperties.m */; };
 		6A26C4F01D00238100C70AE1 /* LogsMonth.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C07B61CFEAD0A001D633F /* LogsMonth.m */; };
-		6A26C4F11D00238300C70AE1 /* Logs+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C07B11CFEAC7A001D633F /* Logs+CoreDataProperties.m */; };
-		6A26C4F21D00238600C70AE1 /* Logs.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CB41CF8365700327963 /* Logs.m */; };
 		6A26C4F31D00259300C70AE1 /* NSDate+ZDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CC11CF83BB100327963 /* NSDate+ZDate.m */; };
 		6A26C4F41D0025AF00C70AE1 /* NSString+TString.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CC41CF8622600327963 /* NSString+TString.m */; };
 		6A26C4F51D0025D400C70AE1 /* ModelContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A1A2CB81CF8387500327963 /* ModelContext.m */; };
 		6A26C4F61D002A6300C70AE1 /* LogTime.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 6A1A2CA01CF834FB00327963 /* LogTime.xcdatamodeld */; };
 		6A26C4F91D00535A00C70AE1 /* LModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A26C4F81D00535A00C70AE1 /* LModel.m */; };
+		6A26C56C1D06AB2D00C70AE1 /* Logs+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A26C5691D06AB2D00C70AE1 /* Logs+CoreDataProperties.m */; };
+		6A26C56D1D06AB2D00C70AE1 /* Logs+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A26C5691D06AB2D00C70AE1 /* Logs+CoreDataProperties.m */; };
+		6A26C56F1D06AB2D00C70AE1 /* Logs.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A26C56B1D06AB2D00C70AE1 /* Logs.m */; };
+		6A26C5701D06AB2D00C70AE1 /* Logs.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A26C56B1D06AB2D00C70AE1 /* Logs.m */; };
 		F4CF07CC3131087AF1E93CE2 /* libPods-LogTime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A0ED4EDA40A60A5A49F0DC6 /* libPods-LogTime.a */; };
 /* End PBXBuildFile section */
 
@@ -69,8 +69,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6A0C07B01CFEAC7A001D633F /* Logs+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Logs+CoreDataProperties.h"; path = "LogTime/Logs+CoreDataProperties.h"; sourceTree = "<group>"; };
-		6A0C07B11CFEAC7A001D633F /* Logs+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Logs+CoreDataProperties.m"; path = "LogTime/Logs+CoreDataProperties.m"; sourceTree = "<group>"; };
 		6A0C07B31CFEAD0A001D633F /* LogsMonth+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LogsMonth+CoreDataProperties.h"; path = "LogTime/LogsMonth+CoreDataProperties.h"; sourceTree = "<group>"; };
 		6A0C07B41CFEAD0A001D633F /* LogsMonth+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "LogsMonth+CoreDataProperties.m"; path = "LogTime/LogsMonth+CoreDataProperties.m"; sourceTree = "<group>"; };
 		6A0C07B51CFEAD0A001D633F /* LogsMonth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LogsMonth.h; path = LogTime/LogsMonth.h; sourceTree = "<group>"; };
@@ -90,8 +88,6 @@
 		6A1A2CA81CF834FB00327963 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A1A2CAE1CF8359F00327963 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		6A1A2CAF1CF8359F00327963 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		6A1A2CB31CF8365700327963 /* Logs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Logs.h; path = LogTime/Logs.h; sourceTree = "<group>"; };
-		6A1A2CB41CF8365700327963 /* Logs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Logs.m; path = LogTime/Logs.m; sourceTree = "<group>"; };
 		6A1A2CB71CF8387500327963 /* ModelContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelContext.h; sourceTree = "<group>"; };
 		6A1A2CB81CF8387500327963 /* ModelContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelContext.m; sourceTree = "<group>"; };
 		6A1A2CBA1CF839BB00327963 /* ShowDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowDataViewController.h; sourceTree = "<group>"; };
@@ -117,6 +113,15 @@
 		6A1A2CE41CFC535B00327963 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A26C4F71D00535A00C70AE1 /* LModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LModel.h; sourceTree = "<group>"; };
 		6A26C4F81D00535A00C70AE1 /* LModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LModel.m; sourceTree = "<group>"; };
+		6A26C55A1D055B8E00C70AE1 /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		6A26C55B1D055B8E00C70AE1 /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		6A26C55E1D055B8E00C70AE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		6A26C5601D055B8E00C70AE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A26C5671D06AABF00C70AE1 /* LogTime 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "LogTime 3.xcdatamodel"; sourceTree = "<group>"; };
+		6A26C5681D06AB2D00C70AE1 /* Logs+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Logs+CoreDataProperties.h"; sourceTree = "<group>"; };
+		6A26C5691D06AB2D00C70AE1 /* Logs+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Logs+CoreDataProperties.m"; sourceTree = "<group>"; };
+		6A26C56A1D06AB2D00C70AE1 /* Logs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logs.h; sourceTree = "<group>"; };
+		6A26C56B1D06AB2D00C70AE1 /* Logs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Logs.m; sourceTree = "<group>"; };
 		9A0ED4EDA40A60A5A49F0DC6 /* libPods-LogTime.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LogTime.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA48CB1BAE473081EDEE1AC /* Pods-LogTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LogTime/Pods-LogTime.debug.xcconfig"; sourceTree = "<group>"; };
 		F6461853B6C5BF9C5269BFAE /* Pods-LogTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LogTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-LogTime/Pods-LogTime.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,16 +150,17 @@
 		6A1A2C881CF834FB00327963 = {
 			isa = PBXGroup;
 			children = (
+				6A26C5681D06AB2D00C70AE1 /* Logs+CoreDataProperties.h */,
+				6A26C5691D06AB2D00C70AE1 /* Logs+CoreDataProperties.m */,
+				6A26C56A1D06AB2D00C70AE1 /* Logs.h */,
+				6A26C56B1D06AB2D00C70AE1 /* Logs.m */,
 				6A0C07B31CFEAD0A001D633F /* LogsMonth+CoreDataProperties.h */,
 				6A0C07B41CFEAD0A001D633F /* LogsMonth+CoreDataProperties.m */,
 				6A0C07B51CFEAD0A001D633F /* LogsMonth.h */,
 				6A0C07B61CFEAD0A001D633F /* LogsMonth.m */,
-				6A0C07B01CFEAC7A001D633F /* Logs+CoreDataProperties.h */,
-				6A0C07B11CFEAC7A001D633F /* Logs+CoreDataProperties.m */,
-				6A1A2CB31CF8365700327963 /* Logs.h */,
-				6A1A2CB41CF8365700327963 /* Logs.m */,
 				6A1A2C931CF834FB00327963 /* LogTime */,
 				6A1A2CDD1CFC535B00327963 /* LogTimeExtension */,
+				6A26C5591D055B8E00C70AE1 /* LogShare */,
 				6A1A2C921CF834FB00327963 /* Products */,
 				DB19A00353D3D1DBB08F55DB /* Pods */,
 				95F039510A97C4F82F08EF5F /* Frameworks */,
@@ -226,6 +232,17 @@
 				6A1A2CE41CFC535B00327963 /* Info.plist */,
 			);
 			path = LogTimeExtension;
+			sourceTree = "<group>";
+		};
+		6A26C5591D055B8E00C70AE1 /* LogShare */ = {
+			isa = PBXGroup;
+			children = (
+				6A26C55A1D055B8E00C70AE1 /* ShareViewController.h */,
+				6A26C55B1D055B8E00C70AE1 /* ShareViewController.m */,
+				6A26C55D1D055B8E00C70AE1 /* MainInterface.storyboard */,
+				6A26C5601D055B8E00C70AE1 /* Info.plist */,
+			);
+			path = LogShare;
 			sourceTree = "<group>";
 		};
 		95F039510A97C4F82F08EF5F /* Frameworks */ = {
@@ -414,21 +431,21 @@
 				6A1A2CCE1CF87D4A00327963 /* SheetViewController.m in Sources */,
 				6A1A2CBF1CF83ABE00327963 /* LogCell.m in Sources */,
 				6A1A2C9C1CF834FB00327963 /* ViewController.m in Sources */,
-				6A0C07B21CFEAC7A001D633F /* Logs+CoreDataProperties.m in Sources */,
 				6A26C4F91D00535A00C70AE1 /* LModel.m in Sources */,
 				6A0C07B81CFEAD0A001D633F /* LogsMonth.m in Sources */,
 				6A1A2CC51CF8622600327963 /* NSString+TString.m in Sources */,
 				6A1A2CA21CF834FB00327963 /* LogTime.xcdatamodeld in Sources */,
 				6A1A2CC81CF86A9F00327963 /* NSArray+ZArray.m in Sources */,
 				6A1A2C991CF834FB00327963 /* AppDelegate.m in Sources */,
+				6A26C56F1D06AB2D00C70AE1 /* Logs.m in Sources */,
 				6A1A2CCB1CF8729000327963 /* NSObject+ATObject.m in Sources */,
 				6A1A2CB01CF8359F00327963 /* HomeViewController.m in Sources */,
-				6A1A2CB61CF8365700327963 /* Logs.m in Sources */,
 				6A1A2C961CF834FB00327963 /* main.m in Sources */,
 				6A1A2CBC1CF839BB00327963 /* ShowDataViewController.m in Sources */,
 				6A1A2CB91CF8387500327963 /* ModelContext.m in Sources */,
 				6A1A2CC21CF83BB100327963 /* NSDate+ZDate.m in Sources */,
 				6A0C07B71CFEAD0A001D633F /* LogsMonth+CoreDataProperties.m in Sources */,
+				6A26C56C1D06AB2D00C70AE1 /* Logs+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,11 +457,11 @@
 				6A26C4F01D00238100C70AE1 /* LogsMonth.m in Sources */,
 				6A1A2CE01CFC535B00327963 /* TodayViewController.m in Sources */,
 				6A26C4F41D0025AF00C70AE1 /* NSString+TString.m in Sources */,
+				6A26C5701D06AB2D00C70AE1 /* Logs.m in Sources */,
+				6A26C56D1D06AB2D00C70AE1 /* Logs+CoreDataProperties.m in Sources */,
 				6A26C4F51D0025D400C70AE1 /* ModelContext.m in Sources */,
 				6A26C4EE1D001F0C00C70AE1 /* LogTime.xcdatamodeld in Sources */,
 				6A26C4F31D00259300C70AE1 /* NSDate+ZDate.m in Sources */,
-				6A26C4F21D00238600C70AE1 /* Logs.m in Sources */,
-				6A26C4F11D00238300C70AE1 /* Logs+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +496,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				6A1A2CE21CFC535B00327963 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		6A26C55D1D055B8E00C70AE1 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6A26C55E1D055B8E00C70AE1 /* Base */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -670,10 +695,11 @@
 		6A1A2CA01CF834FB00327963 /* LogTime.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				6A26C5671D06AABF00C70AE1 /* LogTime 3.xcdatamodel */,
 				6A1A2CD21CFC45C700327963 /* LogTime 2.xcdatamodel */,
 				6A1A2CA11CF834FB00327963 /* LogTime.xcdatamodel */,
 			);
-			currentVersion = 6A1A2CD21CFC45C700327963 /* LogTime 2.xcdatamodel */;
+			currentVersion = 6A26C5671D06AABF00C70AE1 /* LogTime 3.xcdatamodel */;
 			path = LogTime.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
